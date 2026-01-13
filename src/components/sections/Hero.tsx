@@ -1,8 +1,5 @@
-import { Button } from "@/components/ui/button"
-import {
-    Card,
-    CardContent,
-} from "@/components/ui/card"
+import { Button } from "../ui/button";
+
 
 export function Hero() {
     return (
@@ -12,7 +9,7 @@ export function Hero() {
                     Cresça com estratégia
                 </span>
 
-                <h1 className="text-4xl font-bold leading-tight tracking-tight">
+                <h1 className="text-4xl font-bold leading-tight tracking-tight uppercase">
                     Transformamos negócios em
                     <span className="text-primary"> máquinas de crescimento</span>
                 </h1>
@@ -22,21 +19,21 @@ export function Hero() {
                     verdade.
                 </p>
 
-                <Card>
-                    <CardContent className="flex flex-col gap-3 pt-6">
-                        <Button size="lg" className="rounded-full">
-                            Quero crescer meu negócio
-                        </Button>
-
-                        <Button
-                            variant="outline"
-                            size="lg"
-                            className="rounded-full"
+                <div>
+                    <Button
+                        asChild
+                        className="rounded-xl text-lg text-green-500"
+                    >
+                        <a
+                            href="https://wa.me/5573999973035?text=Olá!%20Gostaria%20de%20contratar%20a%20ONCOMPANY"
+                            target="_blank"
+                            rel="noopener noreferrer"
                         >
-                            Ver como funciona
-                        </Button>
-                    </CardContent>
-                </Card>
+                            CONTRATE A ONCOMPANY
+                        </a>
+                    </Button>
+                </div>
+
             </div>
         </section>
     )
