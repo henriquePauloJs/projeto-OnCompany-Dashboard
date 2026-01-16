@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card"
-
+import { FadeIn } from "../animations/fadeIn"
 
 const services = [
     {
@@ -19,30 +19,34 @@ const services = [
 export function Services() {
     return (
         <section className="px-2">
-            <div className="mx-auto flex max-w-xl flex-col gap-6">
-                <h2 className="text-2xl font-bold">
-                    O QUE FAZEMOS ?
-                </h2>
+            <div className="mx-auto flex flex-col gap-6">
+                {/* O título da seção aparece primeiro */}
+                <FadeIn direction="up">
+                    <h2 className="text-2xl font-bold uppercase">
+                        O QUE FAZEMOS ?
+                    </h2>
+                </FadeIn>
 
                 <div className="flex flex-col gap-4">
-                    {services.map((service) => (
-                        <Card key={service.title} className="rounded-2xl bg-linear-to-r from-green-400 to-green-600 text-black">
-                            <CardContent className="pt-0 px-6 pb-6">
-                                <div className="flex flex-col">
-                                    <h3 className="m-0 text-lg font-extrabold uppercase">
-                                        {service.title}
-                                    </h3>
-                                    <p className="mt-4 text-lg text-white font-bold">
-                                        {service.description}
-                                    </p>
-                                </div>
-                            </CardContent>
-                        </Card>
+                    {services.map((service, i) => (
+                        /* Cada card terá um delay baseado na sua posição (index) */
+                        <FadeIn key={service.title} direction="up" delay={i * 0.1}>
+                            <Card className="rounded-2xl bg-linear-to-r from-green-400 to-green-600 text-black">
+                                <CardContent className="pt-6 px-6 pb-6"> {/* Ajustei pt-6 para o título não ficar colado no topo do card */}
+                                    <div className="flex flex-col">
+                                        <h3 className="m-0 text-lg font-extrabold uppercase">
+                                            {service.title}
+                                        </h3>
+                                        <p className="mt-4 text-lg text-white font-bold">
+                                            {service.description}
+                                        </p>
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        </FadeIn>
                     ))}
                 </div>
             </div>
-
-
         </section>
     )
 }

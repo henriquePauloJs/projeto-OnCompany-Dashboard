@@ -1,5 +1,6 @@
 import { Clients } from "@/components/sections/Clients"
 import { CTA } from "@/components/sections/CTA"
+import { Footer } from "@/components/sections/Footer"
 import { Hero } from "@/components/sections/Hero"
 import { Premiun } from "@/components/sections/Premiun"
 import { Proof } from "@/components/sections/Proof"
@@ -14,6 +15,7 @@ export function Home() {
             <Clients />
             <CTA />
             <Premiun />
+            <Footer />
         </main>
     )
 }
