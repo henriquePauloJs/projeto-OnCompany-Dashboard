@@ -13,9 +13,18 @@ export function Premiun() {
     const [phone, setPhone] = useState("")
     const [revenue, setRevenue] = useState("")
     const [email, setEmail] = useState("")
+    const isFormValid =
+        company.trim() &&
+        contact.trim() &&
+        phone.trim() &&
+        revenue.trim() &&
+        email.trim()
+
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
+
+        if (!isFormValid) return
 
         const message = `
 🚀 *Solicitação – OnCompany Premium*
@@ -130,7 +139,8 @@ export function Premiun() {
                                 placeholder="Ex: OnCompany Digital"
                                 value={company}
                                 onChange={(e) => setCompany(e.target.value)}
-                            />                        </div>
+                            />
+                        </div>
 
                         <div>
                             <Label htmlFor="contact">Nome</Label>
@@ -174,6 +184,7 @@ export function Premiun() {
                         </div>
 
                         <Button
+                            disabled={!isFormValid}
                             type="submit"
                             className="w-full mt-4 bg-linear-to-r from-yellow-400 to-yellow-600 text-black font-bold"
                         >

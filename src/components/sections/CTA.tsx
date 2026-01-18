@@ -1,5 +1,5 @@
-import { Button } from "../../components/ui/button"
-import { FadeIn } from "../animations/fadeIn" // Ajuste o caminho se necessário
+import { Button } from "@/components/ui/button"
+import { FadeIn } from "../animations/fadeIn"
 
 export function CTA() {
     return (

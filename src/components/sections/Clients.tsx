@@ -1,8 +1,9 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { FadeIn } from "../animations/fadeIn"
+import ClaroLogo from "@/assets/ClaroLogo.png"
 
 const clients = [
-    { name: "Empresa Alpha" },
+    { name: "Empresa Alpha", logo: ClaroLogo },
     { name: "Empresa Beta" },
     { name: "Empresa Gamma" },
     { name: "Empresa Delta" },
@@ -35,15 +36,22 @@ export function Clients() {
                                     direction="up"
                                     delay={i * 0.1} // Cada cliente aparece 0.1s após o anterior
                                 >
-                                    <Card
-                                        className="bg-green-600 flex items-center justify-center rounded-2xl border-none"
-                                    >
-                                        <CardContent className="p-6">
-                                            <span className="text-sm font-semibold text-black uppercase">
-                                                {client.name}
-                                            </span>
+                                    <Card className="bg-black flex items-center justify-center rounded-2xl border-none">
+                                        <CardContent className="p-6 flex items-center justify-center">
+                                            {client.logo ? (
+                                                <img
+                                                    src={client.logo}
+                                                    alt={`Logo ${client.name}`}
+                                                    className="h-32 object-contain"
+                                                />
+                                            ) : (
+                                                <span className="text-sm font-semibold text-black uppercase">
+                                                    {client.name}
+                                                </span>
+                                            )}
                                         </CardContent>
                                     </Card>
+
                                 </FadeIn>
                             ))}
                         </div>

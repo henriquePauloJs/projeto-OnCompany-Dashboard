@@ -11,7 +11,7 @@ export function Footer() {
                         <strong>CNPJ:</strong> 12.345.678/0001-90
                     </p>
                     <p>
-                        <strong>Endereço:</strong> Rua Exemplo, 123 – Centro, Teixeira de Freitas – BA
+                        <strong>Endereço:</strong> Rua Prudente de Moraes, 300, Terceiro Andar – Centro, Teixeira de Freitas – BASS
                     </p>
                 </div>
 
@@ -50,7 +50,7 @@ export function Footer() {
 
                 {/* Direitos autorais */}
                 <p className="text-xs text-gray-500">
-                    © {new Date().getFullYear()} Sua Empresa. Todos os direitos reservados.
+                    © {new Date().getFullYear()} OnCompany. Todos os direitos reservados.
                 </p>
             </div>
         </footer>
