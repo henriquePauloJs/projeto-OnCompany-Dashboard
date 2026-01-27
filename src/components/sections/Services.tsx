@@ -1,52 +1,64 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { FadeIn } from "../animations/fadeIn"
+import { Card, CardContent } from "@/components/ui/card";
+import { FadeIn } from "../animations/fadeIn";
 
 const services = [
-    {
-        title: "Tráfego Pago",
-        description: "Anúncios estratégicos criados para gerar vendas todos os dias. Atuamos com dados, testes e otimizações constantes para transformar investimento em resultados previsíveis, escaláveis e mensuráveis."
-    },
-    {
-        title: "Estratégia Digital",
-        description: "Planejamento inteligente baseado em objetivos reais de negócio. Unimos posicionamento, funil e métricas para criar estratégias que geram crescimento consistente e decisões seguras."
-    },
-    {
-        title: "Tecnologia",
-        description: "Desenvolvemos sites, sistemas e automações pensados para converter. Tecnologia aplicada ao negócio, com foco em performance, experiência do usuário e eficiência operacional."
-    }
-]
+  {
+    title: "Tráfego Pago",
+    description:
+      "Anúncios estratégicos criados para gerar vendas todos os dias. Atuamos com dados, testes e otimizações constantes para transformar investimento em resultados previsíveis, escaláveis e mensuráveis.",
+  },
+  {
+    title: "Estratégia Digital",
+    description:
+      "Planejamento inteligente baseado em objetivos reais de negócio. Unimos posicionamento, funil e métricas para criar estratégias que geram crescimento consistente e decisões seguras.",
+  },
+  {
+    title: "Tecnologia",
+    description:
+      "Desenvolvemos sites, sistemas e automações pensados para converter. Tecnologia aplicada ao negócio, com foco em performance, experiência do usuário e eficiência operacional.",
+  },
+];
 
 export function Services() {
-    return (
-        <section className="px-2">
-            <div className="mx-auto flex flex-col gap-6">
-                {/* O título da seção aparece primeiro */}
-                <FadeIn direction="up">
-                    <h2 className="text-2xl font-bold uppercase">
-                        O QUE FAZEMOS ?
-                    </h2>
-                </FadeIn>
+  return (
+    <section className="px-4 lg:px-16 ">
+      <div className="mx-auto max-w-7xl">
+        {/* Título */}
+        <FadeIn direction="up">
+          <h2 className="mb-12 text-2xl lg:text-4xl font-extrabold uppercase">
+            O que fazemos
+          </h2>
+        </FadeIn>
 
-                <div className="flex flex-col gap-4">
-                    {services.map((service, i) => (
-                        /* Cada card terá um delay baseado na sua posição (index) */
-                        <FadeIn key={service.title} direction="up" delay={i * 0.1}>
-                            <Card className="rounded-2xl bg-linear-to-r from-green-400 to-green-600 text-black">
-                                <CardContent className="pt-6 px-6 pb-6"> {/* Ajustei pt-6 para o título não ficar colado no topo do card */}
-                                    <div className="flex flex-col">
-                                        <h3 className="m-0 text-lg font-extrabold uppercase">
-                                            {service.title}
-                                        </h3>
-                                        <p className="mt-4 text-lg text-white font-bold">
-                                            {service.description}
-                                        </p>
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        </FadeIn>
-                    ))}
-                </div>
-            </div>
-        </section>
-    )
+        {/* Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-10">
+          {services.map((service, i) => (
+            <FadeIn key={service.title} direction="up" delay={i * 0.1}>
+              <Card
+                className="
+                h-full
+                rounded-3xl
+                bg-linear-to-br from-green-400 to-green-600
+                text-black
+                transition
+                lg:hover:scale-[1.03]
+                lg:hover:shadow-2xl
+              "
+              >
+                <CardContent className="p-8 flex flex-col h-full">
+                  <h3 className="text-xl font-extrabold uppercase">
+                    {service.title}
+                  </h3>
+
+                  <p className="mt-6 text-base lg:text-lg text-white font-semibold">
+                    {service.description}
+                  </p>
+                </CardContent>
+              </Card>
+            </FadeIn>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
