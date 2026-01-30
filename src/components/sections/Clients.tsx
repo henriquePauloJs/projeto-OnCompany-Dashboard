@@ -16,7 +16,7 @@ const clients = [
 
 export function Clients() {
   return (
-    <section className="px-4 lg:px-16  lg:py-24">
+    <section className="px-4 lg:px-16 ">
       <div className="mx-auto max-w-7xl">
         <FadeIn direction="up">
           <Card className="bg-black rounded-3xl p-8 lg:p-16 border-none">

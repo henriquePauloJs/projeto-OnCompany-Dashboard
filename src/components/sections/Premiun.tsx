@@ -53,70 +53,36 @@ export function Premiun() {
     <>
       <section className="px-4">
         <FadeIn direction="up">
-          <Card className="relative mt-20 rounded-3xl bg-black p-8 border border-yellow-500/30 shadow-[0_0_40px_-10px_rgba(234,179,8,0.35)]">
-            <div className="flex flex-col gap-6">
-              {/* Foto Hero Premium */}
+          <Card className="relative rounded-3xl bg-black p-8 md:p-12 border border-yellow-500/30 shadow-[0_0_40px_-10px_rgba(234,179,8,0.35)]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              {/* COLUNA ESQUERDA — IMAGEM */}
               <FadeIn direction="up" delay={0.1}>
-                <div className="relative flex justify-center">
-                  {/* Glow dourado */}
-                  <div
-                    className="
-        absolute
-        inset-0
-        flex justify-center
-        pointer-events-none
-      "
-                  >
+                <div className="relative flex justify-center md:justify-start">
+                  <div className="absolute inset-0 flex justify-center pointer-events-none">
                     <div className="h-[420px] w-[320px] bg-yellow-500/20 blur-3xl rounded-full" />
                   </div>
 
-                  {/* Container da imagem */}
-                  <div
-                    className="
-                                                  relative
-        h-115
-        w-[320px]
-        rounded-3xl
-        overflow-hidden
-        shadow-[0_30px_80px_-20px_rgba(234,179,8,0.6)]
-      border border-yellow-500/30
-      "
-                  >
-                    {/* Overlay escuro (igual V4) */}
+                  <div className="relative h-[420px] w-[320px] rounded-3xl overflow-hidden shadow-[0_30px_80px_-20px_rgba(234,179,8,0.6)] border border-yellow-500/30">
                     <div className="absolute inset-0 bg-black/10 z-10" />
-
-                    {/* Imagem */}
                     <img
                       src="/src/assets/Aleff2.webp"
                       alt="Aleff"
-                      className="
-                        h-full w-full object-cover object-top brightness-110 contrast-105"
-                    />
-
-                    {/* Pattern geométrico (opcional, mas deixa MUITO premium) */}
-                    <div
-                      className=" absolute inset-0 
-                      g-[linear-gradient(135deg,rgba(234,179,8,0.15)_1px,transparent_1px)]
-                     bg-size-[24px_24px] opacity-30 z-20"
+                      className="h-full w-full object-cover object-top brightness-110 contrast-105"
                     />
                   </div>
                 </div>
               </FadeIn>
 
-              <FadeIn direction="up" delay={0.2}>
-                <h2
-                  className="text-center text-3xl font-semibold uppercase bg-linear-to-r
-                                 from-yellow-300 via-yellow-400 to-yellow-500 
-                                 bg-clip-text text-transparent"
-                >
-                  SUA EMPRESA PRECISA DE ATENÇÃO EXCLUSIVA?
-                </h2>
-              </FadeIn>
+              {/* COLUNA DIREITA — CONTEÚDO */}
+              <div className="flex flex-col gap-6">
+                <FadeIn direction="up" delay={0.2}>
+                  <h2 className="text-center md:text-left text-3xl lg:text-4xl font-semibold uppercase bg-linear-to-r from-yellow-300 via-yellow-400 to-yellow-500 bg-clip-text text-transparent">
+                    SUA EMPRESA PRECISA DE ATENÇÃO EXCLUSIVA?
+                  </h2>
+                </FadeIn>
 
-              {/* Descrição */}
-              <div className="space-y-4">
                 <FadeIn direction="up" delay={0.3}>
-                  <p className="text-center text-white/90 leading-relaxed">
+                  <p className="text-white/90 leading-relaxed text-center md:text-left">
                     O Plano Premium foi criado para empresas que não buscam
                     apenas presença digital, mas crescimento estruturado,
                     previsível e escalável.
@@ -124,42 +90,40 @@ export function Premiun() {
                 </FadeIn>
 
                 <FadeIn direction="up" delay={0.4}>
-                  <p className="text-center text-white/80 leading-relaxed text-sm">
+                  <p className="text-white/80 leading-relaxed text-sm text-center md:text-left">
                     Aqui, não entregamos serviços genéricos — entregamos
                     resultado, clareza e controle do crescimento.
                   </p>
                 </FadeIn>
+
+                <ul className="mt-4 space-y-3 text-white">
+                  {[
+                    "Estratégia digital personalizada",
+                    "Gestão avançada de tráfego pago",
+                    "Desenvolvimento e otimização de tecnologia",
+                    "Acompanhamento estratégico contínuo",
+                    "Foco total em performance e escala",
+                  ].map((item, i) => (
+                    <FadeIn key={item} direction="right" delay={0.5 + i * 0.1}>
+                      <li className="flex items-center gap-3">
+                        <span className="h-2 w-2 rounded-full bg-yellow-500 shadow-[0_0_10px_rgba(234,179,8,0.8)]" />
+                        <span className="text-sm font-medium">{item}</span>
+                      </li>
+                    </FadeIn>
+                  ))}
+                </ul>
+
+                <FadeIn direction="up" delay={1.1}>
+                  <div className="mt-6 flex justify-center md:justify-start">
+                    <Button
+                      className="rounded-xl bg-linear-to-r from-yellow-400 to-yellow-600 px-10 py-6 text-sm font-bold text-black transition-all hover:scale-105"
+                      onClick={() => setOpenModal(true)}
+                    >
+                      CONTRATE O ONCOMPANY PREMIUM
+                    </Button>
+                  </div>
+                </FadeIn>
               </div>
-
-              {/* Lista */}
-              <ul className="mx-auto mt-4 max-w-md space-y-3 text-white">
-                {[
-                  "Estratégia digital personalizada",
-                  "Gestão avançada de tráfego pago",
-                  "Desenvolvimento e otimização de tecnologia",
-                  "Acompanhamento estratégico contínuo",
-                  "Foco total em performance e escala",
-                ].map((item, i) => (
-                  <FadeIn key={item} direction="right" delay={0.5 + i * 0.1}>
-                    <li className="flex items-center gap-3">
-                      <span className="h-2 w-2 rounded-full bg-yellow-500 shadow-[0_0_10px_rgba(234,179,8,0.8)]" />
-                      <span className="text-sm font-medium">{item}</span>
-                    </li>
-                  </FadeIn>
-                ))}
-              </ul>
-
-              {/* Botão */}
-              <FadeIn direction="up" delay={1.1}>
-                <div className="mt-6 flex justify-center">
-                  <Button
-                    className="rounded-xl bg-linear-to-r from-yellow-400 to-yellow-600 px-8 py-6 text-sm font-bold text-black hover:opacity-90 transition-all hover:scale-105"
-                    onClick={() => setOpenModal(true)}
-                  >
-                    CONTRATE O ONCOMPANY PREMIUM
-                  </Button>
-                </div>
-              </FadeIn>
             </div>
           </Card>
         </FadeIn>
