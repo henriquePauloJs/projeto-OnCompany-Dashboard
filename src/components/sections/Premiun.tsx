@@ -19,6 +19,16 @@ export function Premiun() {
   const [phone, setPhone] = useState("");
   const [revenue, setRevenue] = useState("");
   const [email, setEmail] = useState("");
+  const formatToBRL = (value: string) => {
+    const numericValue = value.replace(/\D/g, "");
+    const number = Number(numericValue) / 100;
+
+    return new Intl.NumberFormat("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    }).format(number);
+  };
+
   const isFormValid =
     company.trim() &&
     contact.trim() &&
@@ -176,7 +186,8 @@ export function Premiun() {
                 id="revenue"
                 placeholder="Ex: R$ 100.000,00"
                 value={revenue}
-                onChange={(e) => setRevenue(e.target.value)}
+                onChange={(e) => setRevenue(formatToBRL(e.target.value))}
+                inputMode="numeric"
               />
             </div>
 

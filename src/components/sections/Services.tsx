@@ -17,6 +17,16 @@ const services = [
     description:
       "Desenvolvemos sites, sistemas e automações pensados para converter. Tecnologia aplicada ao negócio, com foco em performance, experiência do usuário e eficiência operacional.",
   },
+  {
+    title: "Produção de Conteúdo",
+    description:
+      "Criamos vídeos estratégicos que fortalecem sua marca, geram autoridade e aumentam suas vendas. Do roteiro à edição final, entregamos conteúdo de alto impacto para redes sociais, anúncios e sites.",
+  },
+  {
+    title: "Treinamento de Equipe Comercial",
+    description:
+      "Capacitamos sua equipe para vender mais, com processos claros, abordagem estratégica e técnicas modernas de negociação. Transformamos vendedores comuns em times de alta performance.",
+  },
 ];
 
 export function Services() {
